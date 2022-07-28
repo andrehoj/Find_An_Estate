@@ -1,28 +1,38 @@
 import React from "react";
-import SearchBar from "./Components/SearchBar";
 import Home from "./Pages/home";
-import "./index.css";
+import Search from "./Pages/Search";
+import { BrowserRouter } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import "./index.css";
 
 let theme = createTheme({
   palette: {
     common: {
       black: "#1725A",
-      white: "#FEFFFF",
+      white: "#e8e8e8",
     },
     primary: {
       main: "#3AAFA9",
-      light: "DEF2F1",
+      light: "#DEF2F1",
       dark: "#2B7A78",
+      contrastText: "#ababab",
     },
+  },
+  typography: {
+    fontFamily: "Nunito Sans, Georgia, serif",
   },
 });
 
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Home />
-      <SearchBar />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="Search" element={<Search />} />
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
