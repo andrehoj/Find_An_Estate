@@ -12,10 +12,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
 
-const navItems = [ "About", "Start Searching", 'Why us'];
+const navItems = [
+  { name: "About", link: "/" },
+  { name: "Start searching", link: "/Search" },
+  { name: "why us", link: "/" },
+];
 
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -54,9 +59,9 @@ export default function Nav() {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} >
-            <ListItemButton sx={{  }}>
-              <ListItemText primary={item} sx={{ fontSize: 10 }} />
+          <ListItem key={item.name}>
+            <ListItemButton sx={{}}>
+              <ListItemText primary={item.name} sx={{ fontSize: 10 }} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -91,9 +96,14 @@ export default function Nav() {
           </Typography>
           <Box sx={{ display: { xs: "none", md: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff", fontSize: 18, mr: 5 }}>
-                {item}
-              </Button>
+              <Link to={`${item.link}`} style={{ textDecoration: "none" }}>
+                <Button
+                  key={item.name}
+                  sx={{ color: "#fff", fontSize: 18, mr: 5 }}
+                >
+                  {item.name}
+                </Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>

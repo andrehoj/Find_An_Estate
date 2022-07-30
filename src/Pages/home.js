@@ -7,6 +7,7 @@ import View3 from "../Components/view3";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import SingleEstate from "../Components/SingleEstate";
 
 export default function Home() {
   return (
@@ -77,6 +78,7 @@ export default function Home() {
       <View />
       <View2 />
       <Footer />
+      <SingleEstate />
     </section>
   );
 }

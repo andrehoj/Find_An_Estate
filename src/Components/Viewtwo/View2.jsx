@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Paper, Button } from "@mui/material";
+
 export default function View2() {
   return (
     <Box sx={{ display: "flex", p: 10, gap: 20 }}>
