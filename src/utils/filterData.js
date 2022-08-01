@@ -10,7 +10,7 @@ export const defaultData = [
       { name: "60,000", value: "60000" },
       { name: "85,000", value: "85000" },
     ],
-    placeholder: "Min Price(AED)",
+    placeholder: "Min Price",
     queryName: "minPrice",
   },
   {
@@ -33,7 +33,7 @@ export const defaultData = [
       { name: "900,000", value: "900000" },
       { name: "1000,000", value: "1000000" },
     ],
-    placeholder: "Max Price(AED)",
+    placeholder: "Max Price",
     queryName: "maxPrice",
   },
   {
@@ -51,7 +51,7 @@ export const defaultData = [
       { name: "10", value: "10" },
     ],
     placeholder: "Rooms",
-    queryName: "roomsMin",
+    queryName: "beds",
   },
   {
     items: [
@@ -68,7 +68,7 @@ export const defaultData = [
       { name: "10", value: "10" },
     ],
     placeholder: "Baths",
-    queryName: "bathsMin",
+    queryName: "baths",
   },
 ];
 
@@ -101,7 +101,7 @@ export const filterData = [
       { name: "60,000", value: "60000" },
       { name: "85,000", value: "85000" },
     ],
-    placeholder: "Min Price(AED)",
+    placeholder: "Min Pric",
     queryName: "minPrice",
   },
   {
@@ -123,7 +123,7 @@ export const filterData = [
       { name: "900,000", value: "900000" },
       { name: "1000,000", value: "1000000" },
     ],
-    placeholder: "Max Price(AED)",
+    placeholder: "Max Pric",
     queryName: "maxPrice",
   },
   {

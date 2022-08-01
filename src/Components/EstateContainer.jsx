@@ -1,7 +1,8 @@
 import React from "react";
-import EstateCard from "./Card";
+import Card from "./Card";
 
-export default function EstateContainer() {
+export default function EstateContainer({ properties }) {
+  console.log(properties);
   return (
     <div
       style={{
@@ -14,10 +15,9 @@ export default function EstateContainer() {
         justifyContent: "center",
       }}
     >
-      <EstateCard />
-      <EstateCard />
-      <EstateCard />
-      <EstateCard />
+      {properties.map((property, i) => (
+        <Card property={property} key={i} />
+      ))}
     </div>
   );
 }

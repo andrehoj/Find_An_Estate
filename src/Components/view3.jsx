@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Paper, Button, CardHeader } from "@mui/material";
+import { Box, Paper, Button } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 export default function View3() {

@@ -1,13 +1,14 @@
 import React from "react";
 import Footer from "../Components/Footer";
 import Nav from "../Components/Nav";
-import View from "../Components/View/View";
-import View2 from "../Components/Viewtwo/View2";
-import View3 from "../Components/view3";
+import View from "../Components/View";
+import View2 from "../Components/View2";
+import View3 from "../Components/View3";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import SingleEstate from "../Components/SingleEstate";
+import Map from "../Components/Map";
 
 export default function Home() {
   return (
@@ -38,24 +39,24 @@ export default function Home() {
               lineHeight: { xs: 1, md: 1.4 },
             }}
           >
-            Find Your{" "}
-            <Typography
-              sx={{
-                color: "primary.main",
-                display: "inline-block",
-                fontSize: { md: "5rem", xs: "3.5rem" },
-              }}
-            >
-              Home
-            </Typography>
-            <Typography
-              sx={{
-                fontSize: { md: "1.7rem", xs: "1.3rem" },
-                color: "primary.contrastText",
-              }}
-            >
-              Explore rentals, sales and more...
-            </Typography>
+            Find Your
+          </Typography>
+          <Typography
+            sx={{
+              color: "primary.main",
+              display: "inline-block",
+              fontSize: { md: "5rem", xs: "3.5rem" },
+            }}
+          >
+            Home
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: { md: "1.7rem", xs: "1.3rem" },
+              color: "primary.contrastText",
+            }}
+          >
+            Explore rentals, sales and more...
           </Typography>
 
           <Link to="/Search" style={{ textDecoration: "none" }}>
@@ -79,6 +80,7 @@ export default function Home() {
       <View2 />
       <Footer />
       <SingleEstate />
+      <Map />
     </section>
   );
 }

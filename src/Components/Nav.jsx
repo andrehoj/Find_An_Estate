@@ -96,11 +96,12 @@ export default function Nav() {
           </Typography>
           <Box sx={{ display: { xs: "none", md: "block" } }}>
             {navItems.map((item) => (
-              <Link to={`${item.link}`} style={{ textDecoration: "none" }}>
-                <Button
-                  key={item.name}
-                  sx={{ color: "#fff", fontSize: 18, mr: 5 }}
-                >
+              <Link
+                key={item.name}
+                to={`${item.link}`}
+                style={{ textDecoration: "none" }}
+              >
+                <Button sx={{ color: "#fff", fontSize: 18, mr: 5 }}>
                   {item.name}
                 </Button>
               </Link>
