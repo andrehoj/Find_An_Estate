@@ -1,27 +1,47 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 import SearchBar from "../Components/SearchBar";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 export default function Search() {
   return (
-    <div>
+    <Box>
       <Nav />
       <Box
         sx={{
-          mt: 10,
+          my: 10,
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
-        <h1 style={{ fontSize: "50px", textAlign: "center" }}>
-          Find your <span style={{ color: "#3AAFA9" }}>Estate</span>{" "}
-        </h1>
+        <Typography
+          variant="span"
+          sx={{ fontSize: "50px", textAlign: "center" }}
+        >
+          Find your{" "}
+          <Typography variant="span" sx={{ color: "#3AAFA9" }}>
+            Estate
+          </Typography>
+          <Typography
+            variant="span"
+            sx={{
+              color: "orange",
+              fontSize: 18,
+              position: "relative",
+              bottom: 18,
+            }}
+          >
+            (UAE)
+          </Typography>
+          <Typography>
+            Search for properties in the United Arab Emirates
+          </Typography>
+        </Typography>
         <SearchBar />
       </Box>
       <Footer />
-    </div>
+    </Box>
   );
 }

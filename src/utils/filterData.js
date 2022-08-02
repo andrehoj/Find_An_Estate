@@ -1,6 +1,15 @@
 export const defaultData = [
   {
     items: [
+      { name: "Rent", value: "for-rent" },
+      { name: "Buy", value: "for-sale" },
+    ],
+    placeholder: "Purpose",
+    queryName: "purpose",
+  },
+
+  {
+    items: [
       { name: "0", value: "0" },
       { name: "10,000", value: "10000" },
       { name: "20,000", value: "20000" },
@@ -16,9 +25,6 @@ export const defaultData = [
   {
     items: [
       { name: "0", value: "0" },
-      { name: "50,000", value: "50000" },
-      { name: "60,000", value: "60000" },
-      { name: "85,000", value: "85000" },
       { name: "110,000", value: "110000" },
       { name: "135,000", value: "135000" },
       { name: "160,000", value: "160000" },
@@ -31,7 +37,7 @@ export const defaultData = [
       { name: "700,000", value: "700000" },
       { name: "800,000", value: "800000" },
       { name: "900,000", value: "900000" },
-      { name: "1000,000", value: "1000000" },
+      { name: "1,000,000", value: "1000000" },
     ],
     placeholder: "Max Price",
     queryName: "maxPrice",
@@ -101,7 +107,7 @@ export const filterData = [
       { name: "60,000", value: "60000" },
       { name: "85,000", value: "85000" },
     ],
-    placeholder: "Min Pric",
+    placeholder: "Min Price",
     queryName: "minPrice",
   },
   {
@@ -121,9 +127,9 @@ export const filterData = [
       { name: "700,000", value: "700000" },
       { name: "800,000", value: "800000" },
       { name: "900,000", value: "900000" },
-      { name: "1000,000", value: "1000000" },
+      { name: "1,000,000", value: "1000000" },
     ],
-    placeholder: "Max Pric",
+    placeholder: "Max Price",
     queryName: "maxPrice",
   },
   {

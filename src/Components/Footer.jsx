@@ -16,7 +16,7 @@ export default function Footer() {
           border: "none",
         }}
       />
-      <Typography sx={{ fontSize: "1rem", textAlign: "center" }}>
+      <Typography sx={{ fontSize: "2rem", textAlign: "center" }}>
         Copyright @ Find Your Estate
       </Typography>
     </Box>

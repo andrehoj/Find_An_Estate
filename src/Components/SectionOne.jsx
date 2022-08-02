@@ -1,6 +1,14 @@
 import React from "react";
-import { Box, Paper, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+
+const fontSizes = {
+  xs: "6vw",
+  sm: "2rem",
+ 
+  lg: "2.4rem",
+  xl: "3rem",
+};
 
 export default function View3() {
   return (
@@ -11,29 +19,36 @@ export default function View3() {
         maxWidth: "fit",
         height: "fit",
         justifyContent: "center",
-        alignItems: "center",
-        p: 10,
-        gap: 15,
+        px: 10,
+        py: 5,
+        gap: 5,
+        flexWrap: { xs: "wrap", md: "nowrap" },
       }}
     >
-      <Box sx={{ mt: -10, maxWidth: "fit" }}>
+      <Box sx={{ maxWidth: "fit" }}>
+        <Typography
+          variant="h2"
+          sx={{ fontSize: fontSizes, color: "primary.main", mb: 2 }}
+        >
+          View Home's near you
+        </Typography>
         <img
           src="/images/house-three.avif"
           style={{ width: "100%", height: "auto" }}
-          alt=""
+          alt="house kitchen"
         />
-        <Paper
+        <Typography
+          variant="h5"
           sx={{
             boxShadow: "none",
             fontWeight: "md",
             whiteSpace: "nowrap",
-            fontSize: { xs: 28, lg: 38 },
             lineHeight: 1.6,
             py: 1,
           }}
         >
           4 beds 3 baths house in Toronto
-        </Paper>
+        </Typography>
         <Button
           size="large"
           variant="contained"
@@ -43,24 +58,24 @@ export default function View3() {
           View now
         </Button>
       </Box>
-      <Box sx={{ mt: 10 }}>
+      <Box sx={{}}>
         <img
           src="/images/house-four.avif"
           style={{ maxWidth: "100%", height: "auto" }}
-          alt=""
+          alt="house kitchen"
         />
-        <Paper
+        <Typography
+          variant="h5"
           sx={{
             boxShadow: "none",
             fontWeight: "md",
             whiteSpace: "nowrap",
-            fontSize: { xs: 28, lg: 38 },
             py: 1,
             lineHeight: 1.6,
           }}
         >
           4 beds 3 baths house in Ottawa
-        </Paper>
+        </Typography>
         <Button
           size="large"
           variant="contained"

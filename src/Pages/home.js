@@ -1,12 +1,28 @@
 import React from "react";
 import Footer from "../Components/Footer";
 import Nav from "../Components/Nav";
-import View from "../Components/View";
-import View2 from "../Components/View2";
-import View3 from "../Components/View3";
+import SectionTwo from "../Components/SectionTwo";
+import SectionThree from "../Components/SectionThree";
+import SectionOne from "../Components/SectionOne";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+
+const titleFontSize = {
+  xs: "13vw",
+  sm: "4.3rem",
+  md: "5.4rem",
+  lg: "6rem",
+  xl: "6.5rem",
+};
+
+const subTitleFontSize = {
+  xs: "6vw",
+  sm: "2rem",
+  md: "2rem",
+  lg: "2rem",
+  xl: "2.5rem",
+};
 
 export default function Home() {
   return (
@@ -16,7 +32,7 @@ export default function Home() {
         style={{
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
+          justifyContent: "start",
           alignItems: "center",
           height: "850px",
           width: "100%",
@@ -26,26 +42,24 @@ export default function Home() {
           backgroundImage: "url('images/main-bg.jpg')",
         }}
       >
-        <Box sx={{ mx: 5, textAlign: "center" }}>
+        <Box sx={{ mt: 30, textAlign: "center" }}>
           <Typography
             sx={{
               color: "common.white",
-              fontSize: { md: "5rem", xs: "3.5rem" },
+              fontSize: titleFontSize,
               fontWeight: "bold",
               textAlign: "center",
-              display: "inline-block",
               whiteSpace: "nowrap",
-              mb: 1,
               lineHeight: { xs: 1, md: 1.4 },
             }}
           >
             Find Your
             <Typography
+              component="span"
               sx={{
-                display: "inline-block",
                 color: "primary.main",
-                fontSize: { md: "5rem", xs: "3.5rem" },
-                ml: 2
+                fontSize: "inherit",
+                ml: 2,
               }}
             >
               Home
@@ -54,9 +68,9 @@ export default function Home() {
 
           <Typography
             sx={{
-              mt: -3,
-              fontSize: { md: "1.7rem", xs: "1.3rem" },
+              fontSize: subTitleFontSize,
               color: "primary.contrastText",
+              whiteSpace: "nowrap",
             }}
           >
             Explore rentals, sales and more...
@@ -67,6 +81,7 @@ export default function Home() {
               variant="contained"
               sx={{
                 fontSize: { xs: 15, md: 25 },
+                mt: 4,
                 whiteSpace: "nowrap",
                 backgroundColor: "primary.main",
                 color: "common.white",
@@ -78,9 +93,9 @@ export default function Home() {
           </Link>
         </Box>
       </div>
-      <View3 />
-      <View />
-      <View2 />
+      <SectionOne />
+      <SectionTwo />
+      <SectionThree />
       <Footer />
     </section>
   );

@@ -20,11 +20,9 @@ import { options, fetchApi } from "../utils/axios";
 import EstateContainer from "./EstateContainer";
 
 export default function SearchBar() {
-
   const [properties, setProperties] = useState([]);
 
   const [defaultFormData, setDefaultFormData] = useState({
-    location: "",
     purpose: "",
     maxPrice: 0,
     minPrice: 0,
@@ -34,6 +32,7 @@ export default function SearchBar() {
 
   function handleChange({ target }) {
     setDefaultFormData({ ...defaultFormData, [target.name]: target.value });
+    console.log(defaultFormData);
   }
 
   const [moreFilters, setMoreFilters] = useState(filterData);
@@ -43,15 +42,15 @@ export default function SearchBar() {
   const open = Boolean(anchorEl);
 
   async function handleSubmit() {
+    console.log(defaultFormData);
     try {
-      fetchApi(options).then((results) => {
-        setProperties(results.hits);
-      });
+      // fetchApi(options).then((results) => {
+      //   setProperties(results.hits);
+      // });
     } catch (error) {
       console.log(error);
     }
-  } 
-
+  }
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -83,17 +82,6 @@ export default function SearchBar() {
             justifyContent={"center"}
             spacing={3}
           >
-            <Grid item xs={12} textAlign="center">
-              <TextField
-                id="standard-basic"
-                label="City, Province"
-                variant="standard"
-                size="small"
-                style={{ width: "55%" }}
-                onChange={handleChange}
-                name={"location"}
-              />
-            </Grid>
             {defaultData.map((filter) => (
               <Grid item key={filter.placeholder}>
                 <InputLabel id="label">{filter.placeholder}</InputLabel>
@@ -108,7 +96,7 @@ export default function SearchBar() {
                 >
                   {filter.items.map((item) => (
                     <MenuItem key={item.name} value={item.name}>
-                      {item.value}
+                      {item.name}
                     </MenuItem>
                   ))}
                 </Select>
@@ -197,7 +185,7 @@ export default function SearchBar() {
       ) : (
         <EstateContainer />
       )} */}
-        <EstateContainer />
+      <EstateContainer />
     </div>
   );
 }

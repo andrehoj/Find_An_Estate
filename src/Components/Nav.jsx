@@ -11,13 +11,12 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
 
 const navItems = [
-  { name: "About", link: "/" },
+  { name: "Home", link: "/" },
   { name: "Search", link: "/Search" },
   { name: "Why Us", link: "/" },
 ];
@@ -53,9 +52,30 @@ export default function Nav() {
       onClick={handleDrawerToggle}
       sx={{ textAlign: "center", bgcolor: "none" }}
     >
-      <Typography variant="h6" sx={{ my: 2 }}>
-        Find Your Esate
-      </Typography>
+      <Link
+        to="/"
+        style={{
+          textDecoration: "none",
+          width: "100%",
+          color: "#3AAFA9",
+        }}
+      >
+        <Typography variant="h6" sx={{ my: 2 }}>
+          Find Your Esate
+          <Typography
+            variant="span"
+            sx={{
+              color: "orange",
+              fontSize: 14,
+              position: "relative",
+              bottom: 10,
+            }}
+          >
+            (UAE)
+          </Typography>
+        </Typography>
+      </Link>
+
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -96,18 +116,37 @@ export default function Nav() {
           >
             <MenuIcon className="hamburger" sx={{ color: "common.white" }} />
           </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", md: "block" },
-              fontSize: 35,
-              color: "common.white",
+          <Link
+            to="/"
+            style={{
+              textDecoration: "none",
+              width: "100%",
             }}
           >
-            Find Your Estate
-          </Typography>
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{
+                flexGrow: 1,
+                display: { xs: "none", md: "block" },
+                fontSize: 35,
+                color: "common.white",
+              }}
+            >
+              Find Your Estate
+              <Typography
+                variant="span"
+                sx={{
+                  color: "orange",
+                  fontSize: 18,
+                  position: "relative",
+                  bottom: 14,
+                }}
+              >
+                (UAE)
+              </Typography>
+            </Typography>
+          </Link>
           <Box sx={{ display: { xs: "none", md: "block" } }}>
             {navItems.map((item) => (
               <Link
@@ -117,7 +156,12 @@ export default function Nav() {
               >
                 <Typography
                   variant="h5"
-                  sx={{ color: "#fff", mr: 5, display: "inline" }}
+                  sx={{
+                    color: "#fff",
+                    mr: 5,
+                    display: "inline",
+                    whiteSpace: "nowrap",
+                  }}
                 >
                   {item.name}
                 </Typography>

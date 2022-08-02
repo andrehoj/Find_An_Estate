@@ -2,11 +2,11 @@ import React from "react";
 import Home from "./Pages/home";
 import Search from "./Pages/Search";
 import Estate from "./Pages/Estate";
-import { BrowserRouter,  Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "./index.css";
 
-let theme = createTheme({
+const theme = createTheme({
   palette: {
     common: {
       black: "#1725A",
