@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import React from "react";
 import SearchBar from "../Components/SearchBar";
 import Nav from "../Components/Nav";
-
+import Footer from "../Components/Footer";
 export default function Search() {
   return (
     <div>
@@ -21,6 +21,7 @@ export default function Search() {
         </h1>
         <SearchBar />
       </Box>
+      <Footer />
     </div>
   );
 }

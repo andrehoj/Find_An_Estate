@@ -1,23 +1,27 @@
 import React from "react";
 import Card from "./Card";
+import { Container } from "@mui/material";
 
 export default function EstateContainer({ properties }) {
-  console.log(properties);
   return (
-    <div
-      style={{
+    <Container
+    component="section"
+      sx={{
         display: "flex",
-        gap: 10,
-        marginTop: 50,
-        marginRight: 10,
-        marginLeft: 10,
-        flexWrap: "wrap",
         justifyContent: "center",
+        flexWrap: "wrap",
+        gap: 5,
+        my: 10,
       }}
     >
-      {properties.map((property, i) => (
+      {/* {properties.map((property, i) => (
         <Card property={property} key={i} />
-      ))}
-    </div>
+      ))} */}
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+    </Container>
   );
 }

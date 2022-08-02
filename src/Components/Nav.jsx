@@ -18,8 +18,8 @@ const drawerWidth = 240;
 
 const navItems = [
   { name: "About", link: "/" },
-  { name: "Start searching", link: "/Search" },
-  { name: "why us", link: "/" },
+  { name: "Search", link: "/Search" },
+  { name: "Why Us", link: "/" },
 ];
 
 export default function Nav() {
@@ -60,9 +60,23 @@ export default function Nav() {
       <List>
         {navItems.map((item) => (
           <ListItem key={item.name}>
-            <ListItemButton sx={{}}>
-              <ListItemText primary={item.name} sx={{ fontSize: 10 }} />
-            </ListItemButton>
+            <Link
+              key={item.name}
+              to={`${item.link}`}
+              style={{
+                textDecoration: "none",
+                width: "100%",
+
+                color: "#3AAFA9",
+              }}
+            >
+              <ListItemButton sx={{}}>
+                <ListItemText
+                  primary={item.name}
+                  sx={{ fontSize: 10, textAlign: "center" }}
+                />
+              </ListItemButton>
+            </Link>
           </ListItem>
         ))}
       </List>
@@ -92,7 +106,7 @@ export default function Nav() {
               color: "common.white",
             }}
           >
-            Find Your Esate
+            Find Your Estate
           </Typography>
           <Box sx={{ display: { xs: "none", md: "block" } }}>
             {navItems.map((item) => (
@@ -101,9 +115,12 @@ export default function Nav() {
                 to={`${item.link}`}
                 style={{ textDecoration: "none" }}
               >
-                <Button sx={{ color: "#fff", fontSize: 18, mr: 5 }}>
+                <Typography
+                  variant="h5"
+                  sx={{ color: "#fff", mr: 5, display: "inline" }}
+                >
                   {item.name}
-                </Button>
+                </Typography>
               </Link>
             ))}
           </Box>

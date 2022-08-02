@@ -20,6 +20,7 @@ import { options, fetchApi } from "../utils/axios";
 import EstateContainer from "./EstateContainer";
 
 export default function SearchBar() {
+
   const [properties, setProperties] = useState([]);
 
   const [defaultFormData, setDefaultFormData] = useState({
@@ -49,7 +50,8 @@ export default function SearchBar() {
     } catch (error) {
       console.log(error);
     }
-  }
+  } 
+
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -190,11 +192,12 @@ export default function SearchBar() {
         </form>
       </Box>
 
-      {properties ? (
+      {/* {properties ? (
         <EstateContainer properties={properties} />
       ) : (
         <EstateContainer />
-      )}
+      )} */}
+        <EstateContainer />
     </div>
   );
 }

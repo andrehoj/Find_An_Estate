@@ -1,47 +1,92 @@
 import * as React from "react";
-import { Link } from "@mui/material";
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
-import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import { FaDog, FaBed, FaBath, FaBorderAll } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { FaBed, FaBath, FaBorderAll } from "react-icons/fa";
+import {
+  Button,
+  Box,
+  Typography,
+  CardContent,
+  CardMedia,
+  Card,
+} from "@mui/material";
+import trimDescription from "../utils/helpers";
 
 export default function EstateCard({ property }) {
-  console.log(property);
   return (
-    <Link to="/Estate" style={{ textDecoration: "none" }}>
-      <Card sx={{ maxWidth: 600 }} propertyid={`${property.id}`}>
-        <CardMedia
-          component="img"
-          height="400"
-          image={`${property.coverPhoto.url}`}
-          alt="Paella dish"
-        />
-        <CardContent>
-          <Typography variant="h4" color="primary.main">
-            ${property.price} {property.rentFrequency}
-          </Typography>
-        </CardContent>
-        <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
-            {property.rooms} rooms
-            <FaBed />
-          </IconButton>
-          <IconButton aria-label="favorite">
-            {property.baths} baths
-            <FaBath />
-          </IconButton>
-          <IconButton>
-            {Math.round(property.area)} sqft
-            <FaBorderAll />
-          </IconButton>
-        </CardActions>
-        <CardActions disableSpacing>
-          <FaDog aria-label="pets allowed" size={24} />
-        </CardActions>
-      </Card>
-    </Link>
+    <Card sx={{ maxWidth: "550px" }}>
+      <CardMedia
+        component="img"
+        sx={{ height: "400px", maxWidth: "550px" }}
+        //image={`${property.coverPhoto.url}`}
+        image={`https://picsum.photos/575/300`}
+        alt="property cover"
+      />
+      <CardContent
+        sx={{ p: 1, display: "flex", flexDirection: "column", gap: 3 }}
+      >
+        <Typography variant="h4" sx={{ color: "primary.main", fontSize: 30 }}>
+          Ottawa, ON - SunShine Drive 2924
+        </Typography>
+
+        <Typography variant="h5">
+          {/* ${property.price} {property.rentFrequency} */}
+          $590 Monthly - For Rent
+          {/* {property.purpose} */}
+        </Typography>
+
+        <Typography
+          variant="h5"
+          sx={{ display: "flex", flexDirection: "column" }}
+        >
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <FaBed color="#3AAFA9" />
+            {/*Rooms: {property.rooms}*/}
+            Room(s): 2
+          </Box>
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <FaBath color="#3AAFA9" /> {/*Bath(s): {property.baths}  */}
+            Bath(s): 5
+          </Box>
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <FaBorderAll color="#3AAFA9" />
+            {/*  {Math.round(property.area * 100) / 100} */}
+            342.342 Sqft
+          </Box>
+        </Typography>
+        <Typography
+          sx={{
+            display: { xs: "none", md: "block" },
+            maxWidth: "80%",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+          }}
+        >
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, totam
+          qui tenetur nesciunt adipisci repellendus magnam sunt dignissimos
+          ipsam blanditiis assumenda nam aliquam, accusamus, suscipit ipsa
+          molestias. Consequatur, quasi modi.
+          {/* {trimDescription(property.description)} */}
+        </Typography>
+        <Link
+          to="/Estate"
+          // state={{ propertyId: property.externalID }}
+          style={{
+            textDecoration: "none",
+            width: "fit-content",
+          }}
+        >
+          <Button
+            variant="contained"
+            size="large"
+            sx={{
+              color: "common.white",
+            }}
+          >
+            View Estate
+          </Button>
+        </Link>
+      </CardContent>
+    </Card>
   );
 }

@@ -7,8 +7,6 @@ import View3 from "../Components/View3";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import SingleEstate from "../Components/SingleEstate";
-import Map from "../Components/Map";
 
 export default function Home() {
   return (
@@ -35,23 +33,28 @@ export default function Home() {
               fontSize: { md: "5rem", xs: "3.5rem" },
               fontWeight: "bold",
               textAlign: "center",
-              mb: 5,
+              display: "inline-block",
+              whiteSpace: "nowrap",
+              mb: 1,
               lineHeight: { xs: 1, md: 1.4 },
             }}
           >
             Find Your
+            <Typography
+              sx={{
+                display: "inline-block",
+                color: "primary.main",
+                fontSize: { md: "5rem", xs: "3.5rem" },
+                ml: 2
+              }}
+            >
+              Home
+            </Typography>
           </Typography>
+
           <Typography
             sx={{
-              color: "primary.main",
-              display: "inline-block",
-              fontSize: { md: "5rem", xs: "3.5rem" },
-            }}
-          >
-            Home
-          </Typography>
-          <Typography
-            sx={{
+              mt: -3,
               fontSize: { md: "1.7rem", xs: "1.3rem" },
               color: "primary.contrastText",
             }}
@@ -70,7 +73,7 @@ export default function Home() {
               }}
               endIcon={<ArrowForwardIcon />}
             >
-              Start Searching Now
+              Find A Home
             </Button>
           </Link>
         </Box>
@@ -79,8 +82,6 @@ export default function Home() {
       <View />
       <View2 />
       <Footer />
-      <SingleEstate />
-      <Map />
     </section>
   );
 }
