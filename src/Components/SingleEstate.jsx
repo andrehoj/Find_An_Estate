@@ -26,8 +26,6 @@ export default function SingleEstate() {
     getData();
   }, []);
 
-  console.log(property);
-
   if (property) {
     return (
       <div className="">
@@ -178,7 +176,7 @@ export default function SingleEstate() {
               </Typography>
             ))}
             <Typography variant="h6">
-              {property.furnishingStatus ? " Yes" : " No"}
+            Furnished:  {property.furnishingStatus ? " Yes" : " No"}
             </Typography>
             <Box>
               <Typography variant="h6">Description:</Typography>

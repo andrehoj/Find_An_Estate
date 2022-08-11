@@ -1,7 +1,7 @@
 import React from "react";
 import Home from "./Pages/home";
-import Search from "./Pages/Search";
-import Estate from "./Pages/Estate";
+import Search from "./Pages/search";
+import Estate from "./Pages/estate";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "./index.css";
@@ -30,7 +30,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="Search" element={<Search />} />
+          <Route path="search" element={<Search />} />
           <Route path="Estate" element={<Estate />} />
         </Routes>
       </BrowserRouter>

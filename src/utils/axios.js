@@ -34,7 +34,13 @@ export async function singleFetchApi(singleOptions) {
   }
 }
 
-export async function fetchApi(options) {
+export async function fetchApi(options, defaultFormData) {
+  console.log(defaultFormData);
+
+  for (const key in defaultFormData) {
+    options.params[key] = defaultFormData[key];
+  }
+
   try {
     const { data } = await axios.request(options);
     return data;

@@ -10,7 +10,7 @@ export const defaultData = [
 
   {
     items: [
-      { name: "0", value: "0" },
+      { name: "any", value: "" },
       { name: "10,000", value: "10000" },
       { name: "20,000", value: "20000" },
       { name: "30,000", value: "30000" },
@@ -20,11 +20,12 @@ export const defaultData = [
       { name: "85,000", value: "85000" },
     ],
     placeholder: "Min Price",
-    queryName: "minPrice",
+    queryName: "priceMin",
   },
+
   {
     items: [
-      { name: "0", value: "0" },
+      { name: "any", value: "" },
       { name: "110,000", value: "110000" },
       { name: "135,000", value: "135000" },
       { name: "160,000", value: "160000" },
@@ -40,11 +41,12 @@ export const defaultData = [
       { name: "1,000,000", value: "1000000" },
     ],
     placeholder: "Max Price",
-    queryName: "maxPrice",
+    queryName: "priceMax",
   },
+
   {
     items: [
-      { name: "any", value: "any" },
+      { name: "any", value: "" },
       { name: "1", value: "1" },
       { name: "2", value: "2" },
       { name: "3", value: "3" },
@@ -56,12 +58,13 @@ export const defaultData = [
       { name: "9", value: "9" },
       { name: "10", value: "10" },
     ],
-    placeholder: "Rooms",
-    queryName: "beds",
+    placeholder: "Min Rooms",
+    queryName: "bedsMin",
   },
+  
   {
     items: [
-      { name: "any", value: "any" },
+      { name: "any", value: "" },
       { name: "1", value: "1" },
       { name: "2", value: "2" },
       { name: "3", value: "3" },
@@ -73,8 +76,8 @@ export const defaultData = [
       { name: "9", value: "9" },
       { name: "10", value: "10" },
     ],
-    placeholder: "Baths",
-    queryName: "baths",
+    placeholder: "Min Baths",
+    queryName: "bathsMin",
   },
 ];
 

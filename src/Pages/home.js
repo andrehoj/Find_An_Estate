@@ -26,6 +26,7 @@ const subTitleFontSize = {
 };
 
 export default function Home() {
+ 
   return (
     <section style={{ position: "relative" }}>
       <Nav />
@@ -35,7 +36,7 @@ export default function Home() {
           flexDirection: "column",
           justifyContent: "start",
           alignItems: "center",
-          height: "850px",
+          height: "750px",
           width: "100%",
           backgroundPosition: "50%",
           backgroundSize: "cover",

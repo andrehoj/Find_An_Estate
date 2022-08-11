@@ -23,13 +23,14 @@ export default function SearchBar() {
 
   const [defaultFormData, setDefaultFormData] = useState({
     purpose: "",
-    maxPrice: 0,
-    minPrice: 0,
-    baths: "any",
-    beds: "any",
+    priceMax: 0,
+    priceMin: 0,
+    bathsMin: "",
+    roomsMin: "",
   });
 
   function handleChange({ target }) {
+    console.log(target);
     setDefaultFormData({ ...defaultFormData, [target.name]: target.value });
   }
 
@@ -42,18 +43,14 @@ export default function SearchBar() {
   async function handleSubmit() {
     try {
       setLoading(true);
-      fetchApi(options).then((results) => {
-        console.log(results);
+      fetchApi(options, defaultFormData, defaultData).then((results) => {
         setLoading(false);
         setProperties(results.hits);
       });
     } catch (error) {
-      console.log(error);
       setLoading(false);
     }
   }
-
-  console.log(properties);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -90,7 +87,6 @@ export default function SearchBar() {
                 <InputLabel id="label">{filter.placeholder}</InputLabel>
                 <Select
                   sx={{ width: 100, height: 30 }}
-                  value={defaultFormData[filter.queryName]}
                   labelId="label"
                   id="select"
                   onChange={handleChange}
@@ -98,7 +94,7 @@ export default function SearchBar() {
                   name={filter.queryName}
                 >
                   {filter.items.map((item) => (
-                    <MenuItem key={item.name} value={item.name}>
+                    <MenuItem key={item.name} value={item.value}>
                       {item.name}
                     </MenuItem>
                   ))}

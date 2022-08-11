@@ -106,7 +106,7 @@ export default function Nav() {
   return (
     <Box sx={{ display: `${show ? "flex" : "none"}` }}>
       <AppBar component="nav">
-        <Toolbar sx={{justifyContent: "space-between"}} >
+        <Toolbar sx={{ justifyContent: "space-between" }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"

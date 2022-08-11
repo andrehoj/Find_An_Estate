@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import SearchBar from "../Components/SearchBar";
 import Nav from "../Components/Nav";
+
 export default function Search() {
   return (
     <Box>
@@ -19,7 +20,7 @@ export default function Search() {
           variant="span"
           sx={{ fontSize: "50px", textAlign: "center" }}
         >
-          Find your{" "}
+          Find your
           <Typography variant="span" sx={{ color: "#3AAFA9" }}>
             Estate
           </Typography>
