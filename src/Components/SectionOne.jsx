@@ -5,10 +5,19 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 const fontSizes = {
   xs: "6vw",
   sm: "2rem",
- 
+
   lg: "2.4rem",
   xl: "3rem",
 };
+
+const fontSizesSubHeading = {
+  xs: "5.5vw",
+  sm: "1.8rem",
+
+  lg: "1.8rem",
+  xl: "2.2rem",
+};
+
 
 export default function View3() {
   return (
@@ -16,16 +25,16 @@ export default function View3() {
       className="container"
       sx={{
         display: "flex",
-        maxWidth: "fit",
         height: "fit",
         justifyContent: "center",
         px: 10,
-        py: 5,
+        py: 3,
+        mx: 2,
         gap: 5,
         flexWrap: { xs: "wrap", md: "nowrap" },
       }}
     >
-      <Box sx={{ maxWidth: "fit" }}>
+      <Box>
         <Typography
           variant="h2"
           sx={{ fontSize: fontSizes, color: "primary.main", mb: 2 }}
@@ -45,9 +54,10 @@ export default function View3() {
             whiteSpace: "nowrap",
             lineHeight: 1.6,
             py: 1,
+            fontSize: fontSizesSubHeading,
           }}
         >
-          4 beds 3 baths house in Toronto
+          2 beds 2 baths house in Dubai
         </Typography>
         <Button
           size="large"
@@ -55,7 +65,7 @@ export default function View3() {
           sx={{ color: "common.white", whiteSpace: "nowrap" }}
           endIcon={<ArrowForwardIcon />}
         >
-          View now
+          Details
         </Button>
       </Box>
       <Box sx={{}}>
@@ -72,9 +82,10 @@ export default function View3() {
             whiteSpace: "nowrap",
             py: 1,
             lineHeight: 1.6,
+            fontSize: fontSizesSubHeading,
           }}
         >
-          4 beds 3 baths house in Ottawa
+          4 beds 3 baths house in Dubai
         </Typography>
         <Button
           size="large"
@@ -82,7 +93,7 @@ export default function View3() {
           sx={{ color: "common.white", whiteSpace: "nowrap" }}
           endIcon={<ArrowForwardIcon />}
         >
-          View now
+          Details
         </Button>
       </Box>
     </Box>

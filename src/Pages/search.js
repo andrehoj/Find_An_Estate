@@ -2,7 +2,6 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import SearchBar from "../Components/SearchBar";
 import Nav from "../Components/Nav";
-import Footer from "../Components/Footer";
 export default function Search() {
   return (
     <Box>
@@ -41,7 +40,6 @@ export default function Search() {
         </Typography>
         <SearchBar />
       </Box>
-      <Footer />
     </Box>
   );
 }

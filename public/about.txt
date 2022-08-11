@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Noto Sans Old Italic
+- Font Author: Copyright 2017 Google Inc. All Rights Reserved.
+- Font Source: http://fonts.gstatic.com/s/notosansolditalic/v15/TuGOUUFzXI5FBtUq5a8bh68BJxxEVam7tWlRdRhtCC4d.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

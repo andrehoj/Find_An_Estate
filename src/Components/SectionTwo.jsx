@@ -56,17 +56,6 @@ export default function View() {
           Vitae perferendis vero beatae aut impedit officiis eius quo nisi
           numquam dolorum itaque assumenda.
         </Typography>
-        <Button
-          size="large"
-          variant="contained"
-          sx={{
-            color: "common.white",
-            width: "fit-content",
-            fontSize: { xs: 8, sm: 16 },
-          }}
-        >
-          Search Homes
-        </Button>
       </Box>
       <Box
         component="img"

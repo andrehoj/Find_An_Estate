@@ -9,30 +9,30 @@ import {
   CardMedia,
   Card,
 } from "@mui/material";
-import trimDescription from "../utils/helpers";
+import { trimDescription, titleCase } from "../utils/helpers";
 
 export default function EstateCard({ property }) {
+  console.log(property)
   return (
     <Card sx={{ maxWidth: "550px" }}>
       <CardMedia
         component="img"
         sx={{ height: "400px", maxWidth: "550px" }}
-        //image={`${property.coverPhoto.url}`}
-        image={`https://picsum.photos/575/300`}
+        image={`${property.coverPhoto.url}`}
         alt="property cover"
       />
       <CardContent
         sx={{ p: 1, display: "flex", flexDirection: "column", gap: 3 }}
       >
         <Typography variant="h4" sx={{ color: "primary.main", fontSize: 30 }}>
-          Ottawa, ON - SunShine Drive 2924
+           {property.location[2].name}, {property.location[3].name}
         </Typography>
 
-        <Typography variant="h5">
-          {/* ${property.price} {property.rentFrequency} */}
-          $590 Monthly - For Rent
-          {/* {property.purpose} */}
+        <Typography variant="h4">
+          ${property.price} {titleCase(property.rentFrequency)}
         </Typography>
+
+        <Typography variant="h4">{property.purpose}</Typography>
 
         <Typography
           variant="h5"
@@ -40,17 +40,14 @@ export default function EstateCard({ property }) {
         >
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
             <FaBed color="#3AAFA9" />
-            {/*Rooms: {property.rooms}*/}
-            Room(s): 2
+            Rooms(s): {property.rooms}
           </Box>
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-            <FaBath color="#3AAFA9" /> {/*Bath(s): {property.baths}  */}
-            Bath(s): 5
+            <FaBath color="#3AAFA9" /> Bath(s): {property.baths}
           </Box>
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
             <FaBorderAll color="#3AAFA9" />
-            {/*  {Math.round(property.area * 100) / 100} */}
-            342.342 Sqft
+            sqft {Math.round(property.area * 100) / 100}
           </Box>
         </Typography>
         <Typography
@@ -61,16 +58,10 @@ export default function EstateCard({ property }) {
             overflow: "hidden",
             textOverflow: "ellipsis",
           }}
-        >
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, totam
-          qui tenetur nesciunt adipisci repellendus magnam sunt dignissimos
-          ipsam blanditiis assumenda nam aliquam, accusamus, suscipit ipsa
-          molestias. Consequatur, quasi modi.
-          {/* {trimDescription(property.description)} */}
-        </Typography>
+        ></Typography>
         <Link
           to="/Estate"
-          // state={{ propertyId: property.externalID }}
+          state={{ propertyId: property.externalID }}
           style={{
             textDecoration: "none",
             width: "fit-content",

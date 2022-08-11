@@ -18,7 +18,7 @@ const drawerWidth = 240;
 const navItems = [
   { name: "Home", link: "/" },
   { name: "Search", link: "/Search" },
-  { name: "Why Us", link: "/" },
+  { name: "About", link: "/" },
 ];
 
 export default function Nav() {
@@ -104,9 +104,9 @@ export default function Nav() {
   );
 
   return (
-    <Box sx={{ display: `${show ? "flex" : "none"} ` }}>
+    <Box sx={{ display: `${show ? "flex" : "none"}` }}>
       <AppBar component="nav">
-        <Toolbar>
+        <Toolbar sx={{justifyContent: "space-between"}} >
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -120,7 +120,6 @@ export default function Nav() {
             to="/"
             style={{
               textDecoration: "none",
-              width: "100%",
             }}
           >
             <Typography

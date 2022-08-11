@@ -5,7 +5,7 @@ import { Container } from "@mui/material";
 export default function EstateContainer({ properties }) {
   return (
     <Container
-    component="section"
+      component="section"
       sx={{
         display: "flex",
         justifyContent: "center",
@@ -14,14 +14,9 @@ export default function EstateContainer({ properties }) {
         my: 10,
       }}
     >
-      {/* {properties.map((property, i) => (
+      {properties.map((property, i) => (
         <Card property={property} key={i} />
-      ))} */}
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      ))}
     </Container>
   );
 }

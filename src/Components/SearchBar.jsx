@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { filterData, defaultData } from "../utils/filterData";
 import {
-  TextField,
   Button,
   Grid,
   InputLabel,
@@ -10,16 +9,16 @@ import {
   Fab,
   Menu,
   Box,
+  Typography,
 } from "@mui/material";
-
+import ClipLoader from "react-spinners/ClipLoader";
 import SearchIcon from "@mui/icons-material/Search";
 import FilterListIcon from "@mui/icons-material/FilterList";
-
 import { options, fetchApi } from "../utils/axios";
-
 import EstateContainer from "./EstateContainer";
 
 export default function SearchBar() {
+  const [loading, setLoading] = useState(false);
   const [properties, setProperties] = useState([]);
 
   const [defaultFormData, setDefaultFormData] = useState({
@@ -32,7 +31,6 @@ export default function SearchBar() {
 
   function handleChange({ target }) {
     setDefaultFormData({ ...defaultFormData, [target.name]: target.value });
-    console.log(defaultFormData);
   }
 
   const [moreFilters, setMoreFilters] = useState(filterData);
@@ -42,15 +40,20 @@ export default function SearchBar() {
   const open = Boolean(anchorEl);
 
   async function handleSubmit() {
-    console.log(defaultFormData);
     try {
-      // fetchApi(options).then((results) => {
-      //   setProperties(results.hits);
-      // });
+      setLoading(true);
+      fetchApi(options).then((results) => {
+        console.log(results);
+        setLoading(false);
+        setProperties(results.hits);
+      });
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   }
+
+  console.log(properties);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -180,15 +183,138 @@ export default function SearchBar() {
         </form>
       </Box>
 
-      {/* {properties ? (
+      {loading ? (
+        <div className="">
+          <div
+            style={{
+              display: "flex",
+              width: "100vw",
+              height: "100vh",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+            }}
+          >
+            <Typography
+              variant="h2"
+              sx={{ color: "primary.main", letterSpacing: 5 }}
+            >
+              Loading.....
+            </Typography>
+            <ClipLoader size={150} />
+          </div>
+        </div>
+      ) : properties.length ? (
         <EstateContainer properties={properties} />
       ) : (
-        <EstateContainer />
-      )} */}
-      <EstateContainer />
+        <Box sx={{ mt: 5 }}>
+          <Typography
+            sx={{
+              color: "primary.main",
+              fontSize: "30px",
+              textAlign: "center",
+              mb: -8,
+            }}
+          >
+            Popular Homes
+          </Typography>
+          <EstateContainer properties={placeHolderProperties} />
+        </Box>
+      )}
+
+      {/* <EstateContainer /> */}
     </div>
   );
 }
+
+const placeHolderProperties = [
+  {
+    purpose: "for-rent",
+    price: "13000",
+    rentFrequency: "monthly",
+    externalID: "5665626",
+    location: [
+      {
+        name: "UAE",
+      },
+      {
+        name: "",
+      },
+      {
+        name: "Dubai",
+      },
+      {
+        name: "Downtown Dubai",
+      },
+    ],
+    rooms: "1",
+    baths: "1",
+    area: "73.57920768000001",
+    coverPhoto: {
+      externalID: "117105732",
+      url:
+        "https://bayut-production.s3.eu-central-1.amazonaws.com/image/181052265/28afb11642f140c0bf880ee3e834e27b",
+    },
+  },
+
+  {
+    purpose: "for-rent",
+    price: "8000",
+    rentFrequency: "monthly",
+    externalID: "5562934",
+    location: [
+      {
+        name: "UAE",
+      },
+      {
+        name: "",
+      },
+      {
+        name: "Dubai",
+      },
+      {
+        name: "Jumeirah Beach Residence (JBR)",
+      },
+    ],
+    rooms: "0",
+    baths: "1",
+    area: "66.23986752",
+    coverPhoto: {
+      externalID: "185910348",
+      url:
+        "https://bayut-production.s3.eu-central-1.amazonaws.com/image/185910348/d3bd0023a7d5403b88f822c026569e73",
+    },
+  },
+
+  {
+    purpose: "for-rent",
+    price: "14250",
+    rentFrequency: "monthly",
+    externalID: "5447802",
+    location: [
+      {
+        name: "UAE",
+      },
+      {
+        name: "",
+      },
+      {
+        name: "Dubai",
+      },
+      {
+        name: "Downtown Dubai",
+      },
+    ],
+    rooms: "1",
+    baths: "1",
+    area: "92.90304",
+    coverPhoto: {
+      externalID: "115122248",
+      url:
+        "https://bayut-production.s3.eu-central-1.amazonaws.com/image/182157323/868b47d5c6194f789a9d79242122e0f5",
+    },
+  },
+];
 
 //Optional chaining on line 152 caused this error...
 

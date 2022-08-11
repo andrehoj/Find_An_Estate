@@ -1,12 +1,13 @@
 import React from "react";
-import Footer from "../Components/Footer";
 import Nav from "../Components/Nav";
 import SectionTwo from "../Components/SectionTwo";
 import SectionThree from "../Components/SectionThree";
 import SectionOne from "../Components/SectionOne";
+import About from "../Components/About";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+// import SimpleMap from "../Components/Map";
 
 const titleFontSize = {
   xs: "13vw",
@@ -17,7 +18,7 @@ const titleFontSize = {
 };
 
 const subTitleFontSize = {
-  xs: "6vw",
+  xs: "4vw",
   sm: "2rem",
   md: "2rem",
   lg: "2rem",
@@ -26,7 +27,7 @@ const subTitleFontSize = {
 
 export default function Home() {
   return (
-    <section>
+    <section style={{ position: "relative" }}>
       <Nav />
       <div
         style={{
@@ -73,7 +74,7 @@ export default function Home() {
               whiteSpace: "nowrap",
             }}
           >
-            Explore rentals, sales and more...
+            Explore rentals and sales in the UAE area
           </Typography>
 
           <Link to="/Search" style={{ textDecoration: "none" }}>
@@ -95,8 +96,9 @@ export default function Home() {
       </div>
       <SectionOne />
       <SectionTwo />
+      <About />
       <SectionThree />
-      <Footer />
+      {/* <SimpleMap /> */}
     </section>
   );
 }
