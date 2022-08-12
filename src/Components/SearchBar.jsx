@@ -15,7 +15,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 import SearchIcon from "@mui/icons-material/Search";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { options, fetchApi } from "../utils/axios";
-import EstateContainer from "./EstateContainer";
+import EstateContainer from "./EstateInfo/EstateContainer";
 
 export default function SearchBar() {
   const [loading, setLoading] = useState(false);

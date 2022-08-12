@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../Components/Footer"
 import { Box, Typography, Button } from "@mui/material";
 
 export default function SectionThree() {
@@ -58,7 +57,7 @@ export default function SectionThree() {
           Search Homes
         </Button>
       </Box>
-      <Footer />
+    
     </Box>
   );
 }

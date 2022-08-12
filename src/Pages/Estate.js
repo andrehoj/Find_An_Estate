@@ -1,10 +1,6 @@
 import React from "react";
-import SingleEstate from "../Components/SingleEstate";
+import SingleEstate from "../Components/EstateInfo/SingleEstate";
 
 export default function Estate() {
-  return (
-    <div>
-      <SingleEstate />
-    </div>
-  );
+  return <SingleEstate />;
 }

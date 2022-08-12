@@ -53,3 +53,8 @@ body {
     font-size: 10vw;
   }
 }
+
+.map {
+  height: 100%;
+  width: 100%;
+}
