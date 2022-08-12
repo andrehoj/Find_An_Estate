@@ -18,7 +18,6 @@ const drawerWidth = 240;
 const navItems = [
   { name: "Home", link: "/" },
   { name: "Search", link: "/Search" },
-  { name: "About", link: "/" },
 ];
 
 export default function Nav() {
@@ -54,6 +53,7 @@ export default function Nav() {
     >
       <Link
         to="/"
+        aria-label="Home Page"
         style={{
           textDecoration: "none",
           width: "100%",

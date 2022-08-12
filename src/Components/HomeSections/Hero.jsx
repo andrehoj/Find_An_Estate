@@ -32,7 +32,7 @@ export default function Hero() {
         backgroundPosition: "50%",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundImage: "url('images/main-bg.jpg')",
+        backgroundImage: "url('images/main-bg-min.jpg')",
       }}
     >
       <Box sx={{ mt: 30, textAlign: "center" }}>

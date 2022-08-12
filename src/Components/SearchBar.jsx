@@ -212,12 +212,11 @@ export default function SearchBar() {
               mb: -8,
             }}
           >
-            Popular Homes
+            Popular
           </Typography>
           <EstateContainer properties={placeHolderProperties} />
         </Box>
       )}
-
       {/* <EstateContainer /> */}
     </div>
   );

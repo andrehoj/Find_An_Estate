@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Box, Button, Typography } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
@@ -18,7 +19,6 @@ const fontSizesSubHeading = {
   xl: "2.2rem",
 };
 
-
 export default function View3() {
   return (
     <Box
@@ -37,17 +37,17 @@ export default function View3() {
       <Box>
         <Typography
           variant="h2"
-          sx={{ fontSize: fontSizes, color: "primary.main", mb: 2 }}
+          sx={{ fontSize: fontSizes, color: "primary.black", mb: 2 }}
         >
-          View Home's near you
+          Exceptional Properties
         </Typography>
         <img
-          src="/images/house-three.avif"
-          style={{ width: "100%", height: "auto" }}
+          src="https://bayut-production.s3.eu-central-1.amazonaws.com/image/170860810/3a5d42cc8759482393538d8449303740"
+          style={{ width: "90%", height: "auto" }}
           alt="house kitchen"
         />
         <Typography
-          variant="h5"
+          variant="body2"
           sx={{
             boxShadow: "none",
             fontWeight: "md",
@@ -57,25 +57,34 @@ export default function View3() {
             fontSize: fontSizesSubHeading,
           }}
         >
-          2 beds 2 baths house in Dubai
+          One Bed Two Baths House
         </Typography>
-        <Button
-          size="large"
-          variant="contained"
-          sx={{ color: "common.white", whiteSpace: "nowrap" }}
-          endIcon={<ArrowForwardIcon />}
+        <Link
+          to="/Estate"
+          state={{ propertyId: "5014874" }}
+          style={{
+            textDecoration: "none",
+            width: "fit-content",
+          }}
         >
-          Details
-        </Button>
+          <Button
+            size="large"
+            variant="contained"
+            sx={{ color: "common.white", whiteSpace: "nowrap" }}
+            endIcon={<ArrowForwardIcon />}
+          >
+            Details
+          </Button>
+        </Link>
       </Box>
       <Box sx={{}}>
         <img
-          src="/images/house-four.avif"
+          src="https://bayut-production.s3.eu-central-1.amazonaws.com/image/182157323/868b47d5c6194f789a9d79242122e0f5"
           style={{ maxWidth: "100%", height: "auto" }}
           alt="house kitchen"
         />
         <Typography
-          variant="h5"
+          variant="body2"
           sx={{
             boxShadow: "none",
             fontWeight: "md",
@@ -85,16 +94,25 @@ export default function View3() {
             fontSize: fontSizesSubHeading,
           }}
         >
-          4 beds 3 baths house in Dubai
+          One Bed One Bath Apartment
         </Typography>
-        <Button
-          size="large"
-          variant="contained"
-          sx={{ color: "common.white", whiteSpace: "nowrap" }}
-          endIcon={<ArrowForwardIcon />}
+        <Link
+          to="/Estate"
+          state={{ propertyId: "5447802" }}
+          style={{
+            textDecoration: "none",
+            width: "fit-content",
+          }}
         >
-          Details
-        </Button>
+          <Button
+            size="large"
+            variant="contained"
+            sx={{ color: "common.white", whiteSpace: "nowrap" }}
+            endIcon={<ArrowForwardIcon />}
+          >
+            Details
+          </Button>
+        </Link>
       </Box>
     </Box>
   );

@@ -53,8 +53,7 @@ export default function View() {
           variant="h6"
           sx={{ fontSize: subTitleFont, display: { xs: "none", sm: "block" } }}
         >
-          Vitae perferendis vero beatae aut impedit officiis eius quo nisi
-          numquam dolorum itaque assumenda.
+       Explore Dubai's luxury Apartments and Homes 
         </Typography>
       </Box>
       <Box

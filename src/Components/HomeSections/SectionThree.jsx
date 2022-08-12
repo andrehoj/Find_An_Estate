@@ -17,7 +17,7 @@ export default function SectionThree() {
         src="/images/house-two.avif"
         alt="single house"
         sx={{
-          height: {xs: "300px", sm: "600px", md: "800px"},
+          height: { xs: "300px", sm: "600px", md: "800px" },
           maxWidth: { md: "425px", lg: "475px", xl: "575px" },
         }}
       />
@@ -34,21 +34,26 @@ export default function SectionThree() {
         }}
       >
         <Typography
-          variant="h4"
+          variant="body1"
           sx={{
             fontWeight: "bold",
+            fontSize: "30px",
           }}
         >
           Fast search's
         </Typography>
-        <Typography variant="h6" sx={{ fontSize: { xs: "4vw", sm: "1.3rem" } }}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
-          sapiente quis ipsum ex est tempora eius odit.
+        <Typography
+          variant="body1"
+          sx={{ fontSize: { xs: "4vw", sm: "1.3rem" } }}
+        >
+          We want to make your experience searching for apartments and homes for
+          sale and rent in Dubai as easy as possible, which is why all of the
+          real estate listings on our site can be searched and browsed in a
+          variety of filters. We have your traditional search options along with an
+          Interactive Map Search that lets you visually see properties that
+          match your search criteria on a map.
         </Typography>
-        <Typography variant="h6" sx={{ fontSize: { xs: "4vw", sm: "1.3rem" } }}>
-          Vitae perferendis vero beatae aut impedit officiis eius quo nisi
-          numquam dolorum itaque assumenda.
-        </Typography>
+
         <Button
           size="large"
           variant="contained"
@@ -57,7 +62,6 @@ export default function SectionThree() {
           Search Homes
         </Button>
       </Box>
-    
     </Box>
   );
 }

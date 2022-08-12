@@ -80,12 +80,12 @@ export default function About() {
               },
             }}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-            cupiditate eum voluptatem sequi deleniti placeat quaerat consectetur
-            consequatur optio neque perferendis dolores, unde illum molestias
-            quis voluptatibus magni velit eaque. Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Omnis, alias nesciunt, quas quibusdam
-            commodi.
+            We created this online destination with a goal of being the ultimate
+            Dubai real estate site for buyers and renters. Our site
+            features the most recent Dubai area listings that are updated on a
+            daily basis and includes everything from commercial property,
+            rentals, vacant land, townhouses, condos, single family homes for
+            sale and more.
           </Typography>
           <Link component="button" variant="body2" sx={{ fontSize: "20px" }}>
             Read More
@@ -103,26 +103,27 @@ export default function About() {
           <Box sx={{ display: "flex" }}>
             <Box
               component="img"
-              src="/images/photo-grid-one.jpeg"
+              src="/images/photo-grid-one-min.jpeg"
               sx={{ width: "50%", height: "auto" }}
             />
 
             <Box
               component="img"
-              src="/images/photo-grid-two.jpeg"
+              src="/images/photo-grid-two-min.jpeg"
               sx={{ width: "50%", height: "auto" }}
             />
           </Box>
           <Box sx={{ display: "flex" }}>
             <Box
+              defer
               component="img"
-              src="/images/photo-grid-three.jpeg"
+              src="/images/photo-grid-three-min.jpeg"
               sx={{ width: "50%", height: "auto" }}
             />
 
             <Box
               component="img"
-              src="/images/photo-grid-four.jpeg"
+              src="/images/photo-grid-four-min.jpeg"
               sx={{ width: "50%", height: "auto" }}
             />
           </Box>

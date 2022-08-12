@@ -28,6 +28,14 @@ export default function SingleEstate() {
     getData();
   }, []);
 
+   function handleFavorites() {
+  //   coverPhoto = property.coverPhoto.url;
+  //   propertyTitle = property.location[1].name.concat(
+  //     property.location[2].name
+  //   );
+  //   localStorage.setItem("favoriteProperties", { coverphoto, property });
+   }
+
   if (property) {
     return (
       <div className="">
@@ -174,7 +182,11 @@ export default function SingleEstate() {
                   },
                 }}
               >
-                <Button variant="contained" sx={{ color: "common.white" }}>
+                <Button
+                  variant="contained"
+                  sx={{ color: "common.white" }}
+                  onClick={handleFavorites}
+                >
                   Add to Favorites
                 </Button>
                 <Button variant="outlined">Contact</Button>

@@ -5,6 +5,7 @@ import SectionThree from "../Components/HomeSections/SectionThree";
 import SectionOne from "../Components/HomeSections/SectionOne";
 import About from "../Components/HomeSections/About";
 import Hero from "../Components/HomeSections/Hero";
+import Footer from "../Components/Footer"
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <SectionTwo />
       <About />
       <SectionThree />
+      <Footer />
     </section>
   );
 }
