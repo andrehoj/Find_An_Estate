@@ -45,6 +45,7 @@ export default function SearchBar() {
       setLoading(true);
       fetchApi(options, defaultFormData, defaultData).then((results) => {
         setLoading(false);
+        console.log(results.hits)
         setProperties(results.hits);
       });
     } catch (error) {

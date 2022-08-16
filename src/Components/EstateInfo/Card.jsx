@@ -9,7 +9,7 @@ import {
   CardMedia,
   Card,
 } from "@mui/material";
-import { trimDescription, titleCase } from "../../utils/helpers";
+import {  titleCase } from "../../utils/helpers";
 
 export default function EstateCard({ property }) {
   return (

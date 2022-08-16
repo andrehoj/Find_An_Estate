@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Box, Typography, Paper, Button, Grid } from "@mui/material";
+import { Box, Typography, Button, Grid } from "@mui/material";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { FaBed, FaBath, FaBorderAll } from "react-icons/fa";
@@ -9,7 +9,7 @@ import Nav from "../Nav";
 import ClipLoader from "react-spinners/ClipLoader";
 import { trimDescription, titleCase } from "../../utils/helpers";
 import Map from "./Map";
-import { padding } from "@mui/system";
+
 
 export default function SingleEstate() {
   const [property, setProperty] = useState();
@@ -215,7 +215,7 @@ export default function SingleEstate() {
                 <Typography variant="h6">Categories:</Typography>
                 {property.category.map((cat, i) => (
                   <Typography variant="h6">
-                    {i == property.category.length ? cat.name : cat.name}
+                    {i === property.category.length ? cat.name : cat.name}
                   </Typography>
                 ))}
               </Box>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 const titleFont = {
   xs: "1rem",
@@ -53,7 +53,7 @@ export default function View() {
           variant="h6"
           sx={{ fontSize: subTitleFont, display: { xs: "none", sm: "block" } }}
         >
-       Explore Dubai's luxury Apartments and Homes 
+          Explore Dubai's luxury Apartments and Homes
         </Typography>
       </Box>
       <Box

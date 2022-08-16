@@ -5,7 +5,7 @@ export const options = {
   url: "https://bayut.p.rapidapi.com/properties/list",
   params: {
     locationExternalIDs: "5002,6020",
-    hitsPerPage: "1",
+    hitsPerPage: "4",
     lang: "en",
     sort: "city-level-score",
   },
@@ -35,14 +35,14 @@ export async function singleFetchApi(singleOptions) {
 }
 
 export async function fetchApi(options, defaultFormData) {
-  console.log(defaultFormData);
-
   for (const key in defaultFormData) {
+    if (!defaultFormData[key]) continue;
     options.params[key] = defaultFormData[key];
   }
 
   try {
     const { data } = await axios.request(options);
+    console.log(data);
     return data;
   } catch (error) {
     return error;

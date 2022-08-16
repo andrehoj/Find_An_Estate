@@ -1,7 +1,7 @@
 import React from "react";
 import Home from "./Pages/home";
 import Search from "./Pages/search";
-import Estate from "./Pages/estate";
+import Estate from "./Pages/Estate";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "./index.css";
