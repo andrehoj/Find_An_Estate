@@ -21,7 +21,7 @@ export default function SearchBar() {
   const [loading, setLoading] = useState(false);
   const [properties, setProperties] = useState([]);
 
-  const [defaultFormData, setDefaultFormData] = useState({
+  const [defaultdivData, setDefaultdivData] = useState({
     purpose: "",
     priceMax: 0,
     priceMin: 0,
@@ -31,7 +31,7 @@ export default function SearchBar() {
 
   function handleChange({ target }) {
     console.log(target);
-    setDefaultFormData({ ...defaultFormData, [target.name]: target.value });
+    setDefaultdivData({ ...defaultdivData, [target.name]: target.value });
   }
 
   const [moreFilters, setMoreFilters] = useState(filterData);
@@ -40,12 +40,14 @@ export default function SearchBar() {
 
   const open = Boolean(anchorEl);
 
-  async function handleSubmit() {
+  async function handleSubmit(e) {
+    console.log(e);
+    e.preventDefault();
     try {
       setLoading(true);
-      fetchApi(options, defaultFormData, defaultData).then((results) => {
+      fetchApi(options, defaultdivData, defaultData).then((results) => {
         setLoading(false);
-        console.log(results.hits)
+        console.log(results.hits);
         setProperties(results.hits);
       });
     } catch (error) {
@@ -76,7 +78,7 @@ export default function SearchBar() {
           bgcolor: "common.white",
         }}
       >
-        <form>
+        <div>
           <Grid
             container
             alignItems="center"
@@ -105,16 +107,17 @@ export default function SearchBar() {
 
             <Grid item sx={{ alignSelf: "flex-end" }}>
               <Button
+                type="button"
                 variant="outlined"
                 href="#outlined-buttons"
                 onClick={handleSubmit}
               >
-                <SearchIcon />
+                <SearchIcon type='button' />
                 Search
               </Button>
             </Grid>
 
-            <Grid item xs={12} textAlign="center">
+            {/* <Grid item xs={12} textAlign="center">
               <Fab
                 variant="extended"
                 onClick={handleClick}
@@ -175,9 +178,9 @@ export default function SearchBar() {
                   </Grid>
                 </Grid>
               </Menu>
-            </Grid>
+            </Grid> */}
           </Grid>
-        </form>
+        </div>
       </Box>
 
       {loading ? (

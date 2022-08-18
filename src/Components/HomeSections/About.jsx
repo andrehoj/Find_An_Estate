@@ -1,5 +1,9 @@
 import React from "react";
 import { Box, Typography, Link } from "@mui/material";
+import gridImageOne from "./images/photo-grid-one-min.jpeg";
+import gridImageTwo from "./images/photo-grid-two-min.jpeg";
+import gridImageThree from "./images/photo-grid-three-min.jpeg";
+import gridImageFour from "./images/photo-grid-four-min.jpeg";
 
 export default function About() {
   return (
@@ -65,7 +69,7 @@ export default function About() {
             p: 4,
           }}
         >
-          <Typography variant="h3" sx={{ fontSize: { xs: "4vw", sm: "4vw" } }}>
+          <Typography variant="h3" sx={{  fontWeight: "bold", fontSize: { xs: "4vw", sm: "4vw" } }}>
             What We Do
           </Typography>
           <Typography
@@ -81,11 +85,10 @@ export default function About() {
             }}
           >
             We created this online destination with a goal of being the ultimate
-            Dubai real estate site for buyers and renters. Our site
-            features the most recent Dubai area listings that are updated on a
-            daily basis and includes everything from commercial property,
-            rentals, vacant land, townhouses, condos, single family homes for
-            sale and more.
+            Dubai real estate site for buyers and renters. Our site features the
+            most recent Dubai area listings that are updated on a daily basis
+            and includes everything from commercial property, rentals, vacant
+            land, townhouses, condos, single family homes for sale and more.
           </Typography>
           <Link component="button" variant="body2" sx={{ fontSize: "20px" }}>
             Read More
@@ -103,13 +106,13 @@ export default function About() {
           <Box sx={{ display: "flex" }}>
             <Box
               component="img"
-              src="/images/photo-grid-one-min.jpeg"
+              src={gridImageOne}
               sx={{ width: "50%", height: "auto" }}
             />
 
             <Box
               component="img"
-              src="/images/photo-grid-two-min.jpeg"
+              src={gridImageTwo}
               sx={{ width: "50%", height: "auto" }}
             />
           </Box>
@@ -117,13 +120,13 @@ export default function About() {
             <Box
               defer
               component="img"
-              src="/images/photo-grid-three-min.jpeg"
+              src={gridImageThree}
               sx={{ width: "50%", height: "auto" }}
             />
 
             <Box
               component="img"
-              src="/images/photo-grid-four-min.jpeg"
+              src={gridImageFour}
               sx={{ width: "50%", height: "auto" }}
             />
           </Box>

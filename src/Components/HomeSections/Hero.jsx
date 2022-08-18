@@ -2,7 +2,7 @@ import React from "react";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-
+import hero from "./images/hero.jpg"
 const titleFontSize = {
   xs: "13vw",
   sm: "4.3rem",
@@ -32,7 +32,7 @@ export default function Hero() {
         backgroundPosition: "50%",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundImage: "url('images/main-bg-min.jpg')",
+        backgroundImage: `url(${hero})`,
       }}
     >
       <Box sx={{ mt: 30, textAlign: "center" }}>

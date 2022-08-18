@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import houseOne from "./images/house-one.avif";
 
 const titleFont = {
   xs: "1rem",
@@ -59,7 +60,7 @@ export default function View() {
       <Box
         component="img"
         alt="The house from the offer."
-        src="/images/house-one.avif"
+        src={houseOne}
         sx={{
           height: {
             xs: "180px",

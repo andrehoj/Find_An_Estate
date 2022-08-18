@@ -12,6 +12,7 @@ import {
 import {  titleCase } from "../../utils/helpers";
 
 export default function EstateCard({ property }) {
+  console.log(property)
   return (
     <Card sx={{ maxWidth: "550px" }}>
       <CardMedia

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
-
+import image from "./images/house-two.avif";
 export default function SectionThree() {
   return (
     <Box
@@ -14,7 +14,7 @@ export default function SectionThree() {
     >
       <Box
         component="img"
-        src="/images/house-two.avif"
+        src={image}
         alt="single house"
         sx={{
           height: { xs: "300px", sm: "600px", md: "800px" },
@@ -28,7 +28,7 @@ export default function SectionThree() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: { xs: "center", sm: "center", md: "start" },
-          mb: { xs: 30, sm: 25, md: 90, lg: 100 },
+          mb: { xs: 30, sm: 25, md: 79, lg: 78 },
           gap: 1,
           textAlign: { xs: "center", sm: "center", md: "inherit" },
         }}
@@ -38,6 +38,7 @@ export default function SectionThree() {
           sx={{
             fontWeight: "bold",
             fontSize: "30px",
+            mt: { md: "0px", lg: "80px" },
           }}
         >
           Fast search's
@@ -49,8 +50,8 @@ export default function SectionThree() {
           We want to make your experience searching for apartments and homes for
           sale and rent in Dubai as easy as possible, which is why all of the
           real estate listings on our site can be searched and browsed in a
-          variety of filters. We have your traditional search options along with an
-          Interactive Map Search that lets you visually see properties that
+          variety of filters. We have your traditional search options along with
+          an Interactive Map Search that lets you visually see properties that
           match your search criteria on a map.
         </Typography>
 
