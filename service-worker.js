@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Find_An_Estate/precache-manifest.29f5a8cde3381078c4a7b77ce62abf7c.js"
+  "/Find_An_Estate/precache-manifest.654b538343e07d2d8a4bd803296e8d9f.js"
 );
 
 workbox.clientsClaim();
