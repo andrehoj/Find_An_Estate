@@ -3,7 +3,7 @@ import Card from "./Card";
 import { Container } from "@mui/material";
 
 export default function EstateContainer({ properties }) {
-  console.log(properties)
+
   return (
     <Container
       component="section"

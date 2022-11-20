@@ -9,10 +9,8 @@ import {
   CardMedia,
   Card,
 } from "@mui/material";
-import {  titleCase } from "../../utils/helpers";
 
 export default function EstateCard({ property }) {
-  console.log(property)
   return (
     <Card sx={{ maxWidth: "550px" }}>
       <CardMedia
@@ -25,11 +23,11 @@ export default function EstateCard({ property }) {
         sx={{ p: 1, display: "flex", flexDirection: "column", gap: 3 }}
       >
         <Typography variant="h4" sx={{ color: "primary.main", fontSize: 30 }}>
-           {property.location[2].name}, {property.location[3].name}
+          {property.location[2].name}, {property.location[3].name}
         </Typography>
 
         <Typography variant="h4">
-          ${property.price} {titleCase(property.rentFrequency)}
+          ${property.price} {property.rentFrequency} (UAE Dirham)
         </Typography>
 
         <Typography variant="h4">{property.purpose}</Typography>

@@ -42,7 +42,7 @@ export async function fetchApi(options, defaultFormData) {
 
   try {
     const { data } = await axios.request(options);
-    console.log(data);
+
     return data;
   } catch (error) {
     return error;

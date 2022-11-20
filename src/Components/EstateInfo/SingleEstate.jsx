@@ -7,9 +7,8 @@ import { FaBed, FaBath, FaBorderAll } from "react-icons/fa";
 import { singleOptions, singleFetchApi } from "../../utils/axios";
 import Nav from "../Nav";
 import ClipLoader from "react-spinners/ClipLoader";
-import { trimDescription, titleCase } from "../../utils/helpers";
+import { trimDescription } from "../../utils/helpers";
 import Map from "./Map";
-
 
 export default function SingleEstate() {
   const [property, setProperty] = useState();
@@ -27,14 +26,6 @@ export default function SingleEstate() {
     }
     getData();
   }, []);
-
-   function handleFavorites() {
-  //   coverPhoto = property.coverPhoto.url;
-  //   propertyTitle = property.location[1].name.concat(
-  //     property.location[2].name
-  //   );
-  //   localStorage.setItem("favoriteProperties", { coverphoto, property });
-   }
 
   if (property) {
     return (
@@ -107,7 +98,7 @@ export default function SingleEstate() {
                     variant="h5"
                     sx={{ color: "primary.main", mr: 2, textAlign: "center" }}
                   >
-                    ${property.price} - {titleCase(property.rentFrequency)}
+                    ${property.price} - {property.rentFrequency} (UAE Dirham)
                   </Typography>
                   <Box sx={{ textAlign: "center" }}>
                     <img
@@ -166,7 +157,7 @@ export default function SingleEstate() {
                       ml: 2,
                     }}
                   >
-                    {titleCase(property.state)}
+                    {property.state}
                   </span>
                 </Typography>
               </Typography>
@@ -182,11 +173,7 @@ export default function SingleEstate() {
                   },
                 }}
               >
-                <Button
-                  variant="contained"
-                  sx={{ color: "common.white" }}
-                  onClick={handleFavorites}
-                >
+                <Button variant="contained" sx={{ color: "common.white" }}>
                   Add to Favorites
                 </Button>
                 <Button variant="outlined">Contact</Button>

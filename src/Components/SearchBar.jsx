@@ -1,19 +1,16 @@
 import React, { useState } from "react";
-import { filterData, defaultData } from "../utils/filterData";
+import { defaultData } from "../utils/filterData";
 import {
   Button,
   Grid,
   InputLabel,
   Select,
   MenuItem,
-  Fab,
-  Menu,
   Box,
   Typography,
 } from "@mui/material";
 import ClipLoader from "react-spinners/ClipLoader";
 import SearchIcon from "@mui/icons-material/Search";
-import FilterListIcon from "@mui/icons-material/FilterList";
 import { options, fetchApi } from "../utils/axios";
 import EstateContainer from "./EstateInfo/EstateContainer";
 
@@ -30,40 +27,24 @@ export default function SearchBar() {
   });
 
   function handleChange({ target }) {
-    console.log(target);
     setDefaultdivData({ ...defaultdivData, [target.name]: target.value });
   }
 
-  const [moreFilters, setMoreFilters] = useState(filterData);
-
-  const [anchorEl, setAnchorEl] = useState(null);
-
-  const open = Boolean(anchorEl);
-
   async function handleSubmit(e) {
-    console.log(e);
     e.preventDefault();
     try {
       setLoading(true);
       fetchApi(options, defaultdivData, defaultData).then((results) => {
         setLoading(false);
-        console.log(results.hits);
+
+        console.log(results);
+
         setProperties(results.hits);
       });
     } catch (error) {
       setLoading(false);
     }
   }
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  function searchProperties(filterValues) {}
 
   return (
     <div
@@ -112,73 +93,10 @@ export default function SearchBar() {
                 href="#outlined-buttons"
                 onClick={handleSubmit}
               >
-                <SearchIcon type='button' />
+                <SearchIcon type="button" />
                 Search
               </Button>
             </Grid>
-
-            {/* <Grid item xs={12} textAlign="center">
-              <Fab
-                variant="extended"
-                onClick={handleClick}
-                aria-controls={open ? "basic-menu" : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? "true" : undefined}
-              >
-                <FilterListIcon sx={{ mr: 1 }} />
-                More Filters
-              </Fab>
-              <Menu
-                id="basic-menu"
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-                MenuListProps={{
-                  "aria-labelledby": "basic-button",
-                }}
-              >
-                <Grid
-                  p={1}
-                  container
-                  spacing={3}
-                  justifyContent="center"
-                  maxWidth={525}
-                >
-                  {moreFilters.map((filter) => (
-                    <Grid
-                      item
-                      justifyContent={"center"}
-                      key={filter.placeholder}
-                    >
-                      <InputLabel>{filter.placeholder}</InputLabel>
-                      <Select
-                        onChange={(e) => {
-                          searchProperties({
-                            [filter.queryName]: e.target.value,
-                          });
-                        }}
-                        sx={{ width: 100, height: 30 }}
-                      >
-                        {filter.items.map((item) => (
-                          <MenuItem key={item.name}>{item.name}</MenuItem>
-                        ))}
-                      </Select>
-                    </Grid>
-                  ))}
-                  <Grid item xs={12} align="center">
-                    <Button
-                      variant="outlined"
-                      href="#outlined-buttons"
-                      type="submit"
-                      onSubmit={setMoreFilters}
-                    >
-                      <SearchIcon />
-                      Search
-                    </Button>
-                  </Grid>
-                </Grid>
-              </Menu>
-            </Grid> */}
           </Grid>
         </div>
       </Box>
@@ -221,7 +139,6 @@ export default function SearchBar() {
           <EstateContainer properties={placeHolderProperties} />
         </Box>
       )}
-      {/* <EstateContainer /> */}
     </div>
   );
 }
@@ -314,14 +231,3 @@ const placeHolderProperties = [
     },
   },
 ];
-
-//Optional chaining on line 152 caused this error...
-
-// ./src/Components/SearchBar/index.jsx 303:20
-// Module parse failed: Unexpected token (303:20)
-// You may need an appropriate loader to handle this file type.
-// |         columnNumber: 21
-// |       }
-// >     }, filter.items?.map(function (item) {
-// |       return /*#__PURE__*/React.createElement(MenuItem, {
-// |         key: item.name,
